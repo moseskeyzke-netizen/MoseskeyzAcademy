@@ -1,0 +1,9 @@
+{
+  "name": "Moses Keyz Piano Academy",
+  "short_name": "Moses Keyz",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f4f7fb",
+  "theme_color": "#172554",
+  "description": "Beginner-friendly gospel piano lessons, chords and progressions."
+}

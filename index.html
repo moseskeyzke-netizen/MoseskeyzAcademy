@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#172554">
+<meta name="description" content="Beginner-friendly gospel piano lessons from Moses Keyz Piano Academy.">
+<link rel="manifest" href="manifest.webmanifest">
+<title>Moses Keyz Piano Academy</title>
+<style>
+:root{--navy:#172554;--blue:#2563eb;--gold:#fbbf24;--ink:#172033;--muted:#64748b;--bg:#f4f7fb;--card:#fff}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:var(--bg);color:var(--ink)}
+header{background:linear-gradient(135deg,#172554,#1d4ed8);color:white;padding:26px 18px 30px}
+.wrap{max-width:960px;margin:auto;padding:0 16px}
+.brand{font-size:13px;letter-spacing:2px;text-transform:uppercase;color:#bfdbfe;font-weight:800}
+h1{margin:8px 0;font-size:clamp(28px,5vw,42px)}header p{margin:0;color:#dbeafe;max-width:620px}
+nav{display:flex;gap:8px;overflow:auto;padding:14px 0}
+nav button{border:0;border-radius:999px;padding:10px 16px;background:#e2e8f0;color:#1e293b;font-weight:700;white-space:nowrap}
+nav button.active{background:var(--navy);color:white}
+main{padding-bottom:40px}.panel{display:none}.panel.active{display:block}
+.card{background:var(--card);border-radius:18px;padding:20px;margin:12px 0;box-shadow:0 5px 20px #0f172a0c;border:1px solid #e8edf5}
+h2{margin:0 0 8px;font-size:23px}h3{margin:0 0 8px}.muted{color:var(--muted)}
+label{font-weight:700;display:block;margin:12px 0 6px}
+select,button,input{font:inherit}select{width:100%;padding:12px;border:1px solid #cbd5e1;border-radius:12px;background:white}
+.primary{background:var(--blue);color:white;border:0;border-radius:12px;padding:12px 16px;font-weight:800;cursor:pointer}
+.secondary{background:#eff6ff;color:#1d4ed8;border:0;border-radius:12px;padding:10px 14px;font-weight:700;cursor:pointer}
+.pill{display:inline-block;background:#eff6ff;color:#1d4ed8;border-radius:999px;padding:6px 10px;font-size:13px;font-weight:800}
+.chordrow{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}
+.chord{flex:1;min-width:110px;background:#f8fafc;border:1px solid #dbeafe;border-radius:14px;padding:14px;text-align:center}
+.chord strong{font-size:22px;display:block;color:#1d4ed8}.notes{font-size:13px;color:#475569;margin-top:5px}
+.keys{display:flex;gap:3px;height:120px;margin:18px 0;overflow:hidden}
+.key{flex:1;border:1px solid #94a3b8;border-radius:0 0 7px 7px;background:white;display:flex;align-items:end;justify-content:center;padding-bottom:8px;font-size:11px;color:#475569;min-width:22px}
+.key.black{background:#172033;color:white;height:72px;margin:0 -12px;z-index:2;flex:0 0 24px;border:0;border-radius:0 0 5px 5px}
+.progress{height:9px;background:#e2e8f0;border-radius:9px;overflow:hidden;margin:12px 0}.progress span{display:block;height:100%;background:#2563eb;width:0}
+.answer{display:block;width:100%;text-align:left;margin:8px 0;padding:12px;border:1px solid #cbd5e1;background:white;border-radius:12px;cursor:pointer}
+.answer.correct{border-color:#16a34a;background:#f0fdf4}.answer.wrong{border-color:#dc2626;background:#fef2f2}
+footer{text-align:center;color:#64748b;font-size:12px;padding:22px}
+@media(min-width:700px){.cols{display:grid;grid-template-columns:1fr 1fr;gap:14px}.card{padding:24px}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><div class="brand">🎹 MOSES KEYZ • LEARN • PLAY • GROW</div><h1>Moses Keyz Piano Academy</h1><p>Beginner-friendly gospel piano lessons, simple chords and step-by-step practice in all 12 keys.</p></div></header>
+<div class="wrap">
+<nav aria-label="Main navigation">
+<button class="active" data-tab="learn">Learn</button><button data-tab="progressions">Progressions</button><button data-tab="practice">Practice quiz</button><button data-tab="academy">Academy</button>
+</nav>
+<main>
+<section id="learn" class="panel active">
+<div class="cols">
+<div class="card"><span class="pill">LESSON 1</span><h2>Beginner lesson: your first major chord</h2><p>A major triad uses the <b>1st, 3rd and 5th notes</b> of a major scale. In C major, play C–E–G together.</p><div class="chordrow"><div class="chord"><strong>C</strong><span class="notes">C • E • G</span></div><div class="chord"><strong>F</strong><span class="notes">F • A • C</span></div><div class="chord"><strong>G</strong><span class="notes">G • B • D</span></div></div><p class="muted">Try playing each chord slowly with your right hand. Keep your fingers relaxed. Start with C, then F, then G.</p></div>
+<div class="card"><span class="pill">EXPLORE THE KEYS</span><h2>Choose a musical key</h2><label for="keySelect">Select key</label><select id="keySelect"></select><div id="keyInfo"></div><p class="muted">The chord names shown are the basic I–IV–V–vi family for that key.</p></div>
+</div>
+<div class="card"><h2>Meet the piano keys</h2><p class="muted">White keys use letter names A–G. Black keys are the sharps/flats between many white keys.</p><div class="keys" aria-label="Illustration of piano keys"><div class="key">C</div><div class="key black">C♯</div><div class="key">D</div><div class="key black">D♯</div><div class="key">E</div><div class="key">F</div><div class="key black">F♯</div><div class="key">G</div><div class="key black">G♯</div><div class="key">A</div><div class="key black">A♯</div><div class="key">B</div><div class="key">C</div></div></div>
+</section>
+<div class="card"><span class="pill">WELCOME, BEGINNER</span><h2>Start your piano journey here</h2><p>You do not need previous piano experience. Start with the white keys, learn simple major chords, then practise changing between chords slowly.</p><p><b>Your first goal:</b> Play C, F and G major with a relaxed hand. Practise for 10 minutes a day.</p></div>
+<section id="progressions" class="panel">
+<div class="card"><span class="pill">GOSPEL STARTER</span><h2>Try a sweet progression</h2><p>In C major, begin with this common four-chord pattern:</p><div class="chordrow"><div class="chord"><strong>C</strong><span class="notes">I • C E G</span></div><div class="chord"><strong>G</strong><span class="notes">V • G B D</span></div><div class="chord"><strong>Am</strong><span class="notes">vi • A C E</span></div><div class="chord"><strong>F</strong><span class="notes">IV • F A C</span></div></div><p><b>Practice tip:</b> Count 1–2–3–4 for each chord. Repeat slowly, then try a steady rhythm.</p><button class="primary" id="transposeBtn">Show this progression in my selected key</button><div id="transposeResult" aria-live="polite"></div></div>
+<div class="card"><h2>Make it sound fuller</h2><ul><li>Play the root note in your left hand.</li><li>Play the chord in your right hand.</li><li>When comfortable, try chord inversions to move smoothly between chords.</li><li>Use a metronome and increase the speed gradually.</li></ul></div>
+</section>
+<section id="practice" class="panel">
+<div class="card"><span class="pill">QUICK CHECK</span><h2>Test what you learned</h2><div class="progress"><span id="bar"></span></div><p id="questionCount" class="muted">Question 1 of 3</p><h3 id="question"></h3><div id="answers"></div><p id="feedback" aria-live="polite"></p><button class="primary" id="next" hidden>Next question</button><p id="score" class="muted"></p></div>
+</section>
+<section id="academy" class="panel">
+<div class="card"><span class="pill">LEARN FOR FREE</span><h2>Free learning path</h2><ul><li>Beginner piano basics and note names</li><li>Major and minor chord foundations</li><li>Simple gospel progressions</li><li>Practice quizzes and revision</li></ul><p class="muted">The current version includes free starter lessons. More original lessons can be added as the academy grows.</p></div>
+<div class="card"><span class="pill">PREMIUM IDEAS</span><h2>Go further with premium lessons</h2><p>Future paid lessons could include guided video lessons, advanced gospel progressions, playing by ear, chord inversions and personalised practice plans.</p><p><b>Important:</b> Premium payments are not enabled in this prototype. We will connect a payment provider only after the lessons and pricing are ready.</p></div>
+<div class="card"><span class="pill">ADVERTISING PLAN</span><h2>Free lessons supported by ads</h2><p>A future version can show suitable advertisements to free users. This is only a labelled placeholder; no ads are currently running and no money is being earned yet.</p><div style="border:1px dashed #94a3b8;border-radius:12px;padding:18px;text-align:center;color:#64748b;background:#f8fafc">Advertisement space — not active</div></div>
+</section>
+</main>
+<footer>Moses Keyz Piano Academy • Beginner edition • Keep practising!</footer>
+</div>
+<script>
+const keys={
+"C":{I:"C",V:"G",vi:"Am",IV:"F",notes:["C E G","G B D","A C E","F A C"]},
+"G":{I:"G",V:"D",vi:"Em",IV:"C",notes:["G B D","D F♯ A","E G B","C E G"]},
+"D":{I:"D",V:"A",vi:"Bm",IV:"G",notes:["D F♯ A","A C♯ E","B D F♯","G B D"]},
+"A":{I:"A",V:"E",vi:"F♯m",IV:"D",notes:["A C♯ E","E G♯ B","F♯ A C♯","D F♯ A"]},
+"E":{I:"E",V:"B",vi:"C♯m",IV:"A",notes:["E G♯ B","B D♯ F♯","C♯ E G♯","A C♯ E"]},
+"B":{I:"B",V:"F♯",vi:"G♯m",IV:"E",notes:["B D♯ F♯","F♯ A♯ C♯","G♯ B D♯","E G♯ B"]},
+"F":{I:"F",V:"C",vi:"Dm",IV:"B♭",notes:["F A C","C E G","D F A","B♭ D F"]},
+"B♭":{I:"B♭",V:"F",vi:"Gm",IV:"E♭",notes:["B♭ D F","F A C","G B♭ D","E♭ G B♭"]},
+"E♭":{I:"E♭",V:"B♭",vi:"Cm",IV:"A♭",notes:["E♭ G B♭","B♭ D F","C E♭ G","A♭ C E♭"]},
+"A♭":{I:"A♭",V:"E♭",vi:"Fm",IV:"D♭",notes:["A♭ C E♭","E♭ G B♭","F A♭ C","D♭ F A♭"]},
+"D♭":{I:"D♭",V:"A♭",vi:"B♭m",IV:"G♭",notes:["D♭ F A♭","A♭ C E♭","B♭ D♭ F","G♭ B♭ D♭"]},
+"F♯":{I:"F♯",V:"C♯",vi:"D♯m",IV:"B",notes:["F♯ A♯ C♯","C♯ E♯ G♯","D♯ F♯ A♯","B D♯ F♯"]}
+};
+const sel=document.querySelector('#keySelect');
+Object.keys(keys).forEach(k=>{let o=document.createElement('option');o.value=k;o.textContent=k+' major';sel.append(o)});
+function renderKey(){let k=keys[sel.value];document.querySelector('#keyInfo').innerHTML=`<div class="chordrow">${[['I',k.I,k.notes[0]],['V',k.V,k.notes[1]],['vi',k.vi,k.notes[2]],['IV',k.IV,k.notes[3]]].map(x=>`<div class="chord"><strong>${x[1]}</strong><span class="notes">${x[0]} • ${x[2]}</span></div>`).join('')}</div>`}
+sel.addEventListener('change',renderKey);renderKey();
+document.querySelectorAll('nav button').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('nav button,.panel').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.querySelector('#'+b.dataset.tab).classList.add('active')}));
+document.querySelector('#transposeBtn').addEventListener('click',()=>{let k=keys[sel.value];document.querySelector('#transposeResult').innerHTML=`<div class="chordrow">${[['I',k.I,k.notes[0]],['V',k.V,k.notes[1]],['vi',k.vi,k.notes[2]],['IV',k.IV,k.notes[3]]].map(x=>`<div class="chord"><strong>${x[1]}</strong><span class="notes">${x[0]} • ${x[2]}</span></div>`).join('')}</div>`});
+const qs=[
+{q:"Which notes make a C major chord?",a:["C – E – G","C – D – G","C – E♭ – G"],c:0,why:"A major triad uses the 1st, 3rd and 5th notes. C–E–G is C major."},
+{q:"What does the Roman numeral I usually mean in a major key?",a:["The chord built on the first scale note","The chord built on the fifth scale note","The minor sixth chord"],c:0,why:"I is the major chord built on scale degree 1."},
+{q:"Which is the correct C major starter progression?",a:["C – G – Am – F","C – F♯ – B – E","C – D – E – F"],c:0,why:"C–G–Am–F is a common I–V–vi–IV progression."}
+];let qi=0,score=0,answered=false;
+function showQ(){answered=false;let q=qs[qi];document.querySelector('#questionCount').textContent=`Question ${qi+1} of ${qs.length}`;document.querySelector('#bar').style.width=(qi/qs.length*100)+'%';document.querySelector('#question').textContent=q.q;document.querySelector('#feedback').textContent='';document.querySelector('#next').hidden=true;document.querySelector('#answers').innerHTML='';q.a.forEach((a,i)=>{let b=document.createElement('button');b.className='answer';b.textContent=a;b.onclick=()=>choose(i,b);document.querySelector('#answers').append(b)});document.querySelector('#score').textContent=`Score: ${score}/${qs.length}`}
+function choose(i,btn){if(answered)return;answered=true;let q=qs[qi];document.querySelectorAll('.answer')[q.c].classList.add('correct');if(i===q.c){score++;document.querySelector('#feedback').textContent='Correct! '+q.why}else{btn.classList.add('wrong');document.querySelector('#feedback').textContent='Not quite. '+q.why}document.querySelector('#score').textContent=`Score: ${score}/${qs.length}`;document.querySelector('#next').hidden=false;document.querySelector('#next').textContent=qi===qs.length-1?'See my result':'Next question'}
+document.querySelector('#next').onclick=()=>{if(qi<qs.length-1){qi++;showQ()}else{document.querySelector('#question').textContent=`You scored ${score} out of ${qs.length}!`;document.querySelector('#answers').innerHTML='<button class="secondary" onclick="location.reload()">Try again</button>';document.querySelector('#feedback').textContent='Keep practising your chords and progressions.';document.querySelector('#next').hidden=true;document.querySelector('#bar').style.width='100%'}};
+showQ();
+if('serviceWorker' in navigator && location.protocol.startsWith('http'))navigator.serviceWorker.register('./sw.js').catch(()=>{});
+</script>
+</body></html>
